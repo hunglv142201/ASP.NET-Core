@@ -9,6 +9,6 @@ namespace ShopVinhUniversity.Entities
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public ICollection<Product> OwnedProducts { get; set; }
+        public virtual ICollection<Product> OwnedProducts { get; set; }
     }
 }

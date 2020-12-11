@@ -2,7 +2,38 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <div class="list-container">
+        @foreach (var product in Model)
+        {
+            <div class="product-container">
+                <img alt="@product.Name" src="@product.ThumbnailSrc" class="product-img" />
+                <p class="product-name">@product.Name</p>
+                <p class="product-name">@product.Owner.FullName</p>
+            </div>
+        }
+    </div>
 </div>
+
+<style scoped>
+    .list-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .product-container {
+        height: 300px;
+        width: 30%;
+        margin: 10px auto;
+    }
+
+    .product-img {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .product-name {
+        text-align: center;
+    }
+</style>
