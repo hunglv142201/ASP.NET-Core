@@ -72,3 +72,4 @@ D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\bin\Debug\net5.0\Humani
 D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\bin\Debug\net5.0\Castle.Core.dll
 D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\Product\Detail.cshtml.g.cs

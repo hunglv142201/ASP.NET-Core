@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Product Detail";
+}
+
+<div>
+    @if (Model != null)
+    {
+        <img alt="product-image" src="@Model.ThumbnailSrc" />
+        <p>Name: @Model.Name</p>
+        <p>Price: @Model.Price</p>
+        <p>Owner Full name: @Model.Owner.FullName</p>
+    }
+</div>

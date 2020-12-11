@@ -12,6 +12,7 @@ namespace ShopVinhUniversity.Controllers
       _productService = productService;
     }
 
+    [HttpGet("")]
     public IActionResult Index()
     {
       return View(_productService.GetAll());

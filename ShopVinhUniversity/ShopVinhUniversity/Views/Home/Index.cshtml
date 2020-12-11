@@ -6,7 +6,7 @@
     <div class="list-container">
         @foreach (var product in Model)
         {
-            <div class="product-container">
+            <div class="product-container" onclick="handleProductClick('@product.ID')">
                 <img alt="@product.Name" src="@product.ThumbnailSrc" class="product-img" />
                 <p class="product-name">@product.Name</p>
                 <p class="product-name">@product.Owner.FullName</p>
@@ -25,6 +25,13 @@
         height: 300px;
         width: 30%;
         margin: 10px auto;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .product-container:hover {
+        cursor: pointer;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .product-img {
@@ -37,3 +44,9 @@
         text-align: center;
     }
 </style>
+
+<script>
+    const handleProductClick = id => {
+        window.location.href = `${window.location.origin}/product/detail/${id}`;
+    };
+</script>
