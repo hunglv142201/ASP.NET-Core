@@ -8,5 +8,11 @@ namespace ShopVinhUniversity.Services
     ICollection<Product> GetAll(int page = 0, int size = 10);
 
     Product GetById(string id);
+
+    Product Create(Product product);
+
+    Product Update(Product product);
+
+    void Delete(string id);
   }
 }

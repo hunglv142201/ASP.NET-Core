@@ -20,6 +20,8 @@ namespace ShopVinhUniversity.Data
 
       User admin = new User();
       admin.ID = Guid.NewGuid().ToString();
+      admin.CreatedTime = DateTime.Now.Ticks;
+      admin.UpdatedTime = DateTime.Now.Ticks;
       admin.FullName = "Le Viet Hung";
       admin.Username = "admin";
       admin.Password = "abc123";
@@ -28,21 +30,42 @@ namespace ShopVinhUniversity.Data
 
       Product[] products = new Product[]
       {
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 1", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 2", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 3", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 4", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 5", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 6", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 7", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 8", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 9", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 10", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 11", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 12", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 13", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 14", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID },
-        new Product { ID = Guid.NewGuid().ToString(), Name = "Product 15", Price = 10000, ThumbnailSrc = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg", OwnerID = admin.ID }
+        new Product
+        {
+          ID = Guid.NewGuid().ToString(),
+          CreatedTime = DateTime.Now.Ticks,
+          UpdatedTime = DateTime.Now.Ticks,
+          Name = "Thú nhồi bông Doremon",
+          Price = 138000,
+          ThumbnailSrc = "https://salt.tikicdn.com/cache/w444/ts/product/fa/77/c3/ea0e006397a775fcb36e530fd78e04cd.jpg"
+        },
+        new Product
+        {
+          ID = Guid.NewGuid().ToString(),
+          CreatedTime = DateTime.Now.Ticks,
+          UpdatedTime = DateTime.Now.Ticks,
+          Name = "Móc khóa đa năng",
+          Price = 38000,
+          ThumbnailSrc = "https://salt.tikicdn.com/cache/w444/ts/product/ed/58/1a/2bfb01012cf72c0de4cb2b35789e69cb.jpg"
+        },
+        new Product
+        {
+          ID = Guid.NewGuid().ToString(),
+          CreatedTime = DateTime.Now.Ticks,
+          UpdatedTime = DateTime.Now.Ticks,
+          Name = "Sticker Among Us set",
+          Price = 48000,
+          ThumbnailSrc = "https://salt.tikicdn.com/cache/w444/ts/product/21/ff/e4/3746c16627e0f72d76b5f3e30c91eb95.jpg"
+        },
+        new Product
+        {
+          ID = Guid.NewGuid().ToString(),
+          CreatedTime = DateTime.Now.Ticks,
+          UpdatedTime = DateTime.Now.Ticks,
+          Name = "Sticker Among Us set",
+          Price = 48000,
+          ThumbnailSrc = "https://salt.tikicdn.com/cache/w444/ts/product/21/ff/e4/3746c16627e0f72d76b5f3e30c91eb95.jpg"
+        },
       };
 
       foreach (Product p in products)

@@ -7,9 +7,13 @@
         @foreach (var product in Model)
         {
             <div class="product-container" onclick="handleProductClick('@product.ID')">
-                <img alt="@product.Name" src="@product.ThumbnailSrc" class="product-img" />
-                <p class="product-name">@product.Name</p>
-                <p class="product-name">@product.Owner.FullName</p>
+                <div class="product-img-container">
+                    <img alt="@product.Name" src="@product.ThumbnailSrc" class="product-img" />
+                </div>
+                <div class="product-description-container">
+                    <p class="product-price">@product.Price <b>VND</b></p>
+                    <p class="product-name">@product.Name</p>
+                </div>
             </div>
         }
     </div>
@@ -19,34 +23,52 @@
     .list-container {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .product-container {
-        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 400px;
         width: 30%;
-        margin: 10px auto;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
     }
 
-    .product-container:hover {
-        cursor: pointer;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        .product-container:hover {
+            cursor: pointer;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+    .product-img-container {
+        height: 250px;
     }
 
     .product-img {
-        width: 100%;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        display: flex;
+        margin: 0px auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .product-description-container {
+
     }
 
     .product-name {
         text-align: center;
     }
+
+    .product-price {
+        text-align: center;
+        color: indianred;
+    }
 </style>
 
 <script>
     const handleProductClick = id => {
-        window.location.href = `${window.location.origin}/product/detail/${id}`;
+        window.location.href = `${window.location.origin}/home/details/${id}`;
     };
 </script>

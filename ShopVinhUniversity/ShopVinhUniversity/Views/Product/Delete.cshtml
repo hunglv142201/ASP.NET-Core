@@ -1,0 +1,63 @@
+﻿@model ShopVinhUniversity.Entities.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+
+    <div class="root">
+        <div class="thumbnail-container">
+            <img alt="thumbnail" src="@Model.ThumbnailSrc" class="thumbnail" />
+        </div>
+        <div class="description-container">
+            <h3 class="name">@Model.Name</h3>
+            <h3 class="price">@Model.Price <b>VND</b></h3>
+        </div>
+    </div>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+
+<style scoped>
+    .root {
+        display: flex;
+        margin: 100px 0px;
+    }
+
+    .thumbnail-container {
+        padding-right: 60px;
+        width: 40%;
+        border-right: 1px solid #ccc;
+    }
+
+    .thumbnail {
+        display: block;
+        max-width: 100%;
+        margin: 0px auto;
+        border-radius: 10px;
+    }
+
+    .description-container {
+        margin-left: 100px;
+        width: 60%;
+    }
+
+    .name {
+        margin-bottom: 30px;
+    }
+
+    .price {
+        color: indianred;
+        margin-bottom: 30px;
+    }
+</style>

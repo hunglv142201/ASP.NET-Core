@@ -1,0 +1,87 @@
+﻿@model ShopVinhUniversity.Entities.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5 description-container">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThumbnailSrc" class="control-label">Thumbnail</label><br />
+                <input id="product-create-thumbnailsrc-text" asp-for="ThumbnailSrc" class="form-control image-input" />
+                <input id="product-create-thumbnailsrc-file" type="file" accept="image/*" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-7 thumbnail-container">
+        <img id="product-create-thumbnailsrc-preview" alt="thumbnail" src="@Model.ThumbnailSrc" class="thumbnail" />
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<style scoped>
+    .image-input {
+        display: none;
+    }
+
+    .description-container {
+        padding-right: 60px;
+    }
+
+    .thumbnail-container {
+        padding: 0px 60px;
+        border-left: 1px solid #ccc;
+    }
+
+    .thumbnail {
+        display: block;
+        max-width: 100%;
+        margin: 0px auto;
+        border-radius: 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    (() => {
+        document.getElementById('product-create-thumbnailsrc-file').onchange = async function () {
+            if (this.files && this.files[0]) {
+                const base64 = await toBase64(this.files[0]);
+                document.getElementById('product-create-thumbnailsrc-text').value = base64;
+                document.getElementById('product-create-thumbnailsrc-preview').src = base64;
+            }
+        };
+    })();
+
+    const toBase64 = file => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
