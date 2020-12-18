@@ -34,7 +34,8 @@ namespace ShopVinhUniversity.Services.Implement
         UpdatedTime = DateTime.Now.Ticks,
         Name = product.Name,
         Price = product.Price,
-        ThumbnailSrc = product.ThumbnailSrc
+        ThumbnailSrc = product.ThumbnailSrc,
+        CategoryID = product.CategoryID
       };
 
       _context.Products.Add(newProduct);
@@ -55,6 +56,7 @@ namespace ShopVinhUniversity.Services.Implement
       productToUpdate.Name = product.Name;
       productToUpdate.Price = product.Price;
       productToUpdate.ThumbnailSrc = product.ThumbnailSrc;
+      productToUpdate.CategoryID = product.CategoryID;
 
       _context.SaveChanges();
 

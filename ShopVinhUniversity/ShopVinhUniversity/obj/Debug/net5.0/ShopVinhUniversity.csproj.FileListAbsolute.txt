@@ -173,3 +173,13 @@ D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\
 D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\Product\Edit.cshtml.g.cs
 D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
 D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\Home\Details.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\Category\Create.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\Category\Delete.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\Category\Details.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\OrderDetails\Create.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\OrderDetails\Delete.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\OrderDetails\Details.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\OrderDetails\Edit.cshtml.g.cs
+D:\C#\ASP.NET-Core\ShopVinhUniversity\ShopVinhUniversity\obj\Debug\net5.0\Razor\Views\OrderDetails\Index.cshtml.g.cs

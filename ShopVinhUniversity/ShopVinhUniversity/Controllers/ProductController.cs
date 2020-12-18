@@ -1,17 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using ShopVinhUniversity.Data;
 using ShopVinhUniversity.Entities;
 using ShopVinhUniversity.Services;
-using System.Threading.Tasks;
 
 namespace ShopVinhUniversity.Controllers
 {
   public class ProductController : Controller
   {
+    private readonly ApplicationDbContext _context;
     private readonly IProductService _productService;
+    private readonly ICategoryService _categoryService;
 
-    public ProductController(IProductService productService)
+    public ProductController(ApplicationDbContext context, IProductService productService, ICategoryService categoryService)
     {
+      _context = context;
       _productService = productService;
+      _categoryService = categoryService;
     }
 
     // GET: Product
@@ -40,6 +45,7 @@ namespace ShopVinhUniversity.Controllers
     // GET: Product/Create
     public IActionResult Create()
     {
+      ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "Title");
       return View();
     }
 
@@ -48,7 +54,7 @@ namespace ShopVinhUniversity.Controllers
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Create([Bind("Name,Price,ThumbnailSrc")] Product product)
+    public IActionResult Create([Bind("Name,Price,ThumbnailSrc,CategoryID")] Product product)
     {
       if (ModelState.IsValid)
       {
@@ -57,6 +63,7 @@ namespace ShopVinhUniversity.Controllers
         return RedirectToAction(nameof(Index));
       }
 
+      ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "Title", product.CategoryID);
       return View(product);
     }
 
@@ -74,6 +81,7 @@ namespace ShopVinhUniversity.Controllers
         return NotFound();
       }
 
+      ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "Title", product.CategoryID);
       return View(product);
     }
 
@@ -82,7 +90,7 @@ namespace ShopVinhUniversity.Controllers
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Edit(string id, [Bind("ID,Name,Price,ThumbnailSrc")] Product product)
+    public IActionResult Edit(string id, [Bind("ID,Name,Price,ThumbnailSrc,CategoryID")] Product product)
     {
       if (id != product.ID)
       {
@@ -96,6 +104,7 @@ namespace ShopVinhUniversity.Controllers
         return RedirectToAction(nameof(Index));
       }
 
+      ViewData["CategoryID"] = new SelectList(_context.Categories, "ID", "Title", product.CategoryID);
       return View(product);
     }
 

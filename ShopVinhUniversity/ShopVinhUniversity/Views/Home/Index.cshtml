@@ -3,8 +3,33 @@
 }
 
 <div>
-    <div class="list-container">
-        @foreach (var product in Model)
+    <div class="list-category-container">
+        @if (Model.ActiveCategory == null)
+        {
+            <div class="active"><a href="#">Tất cả</a></div>
+            @foreach (var category in Model.Categories)
+            {
+                <div><a href="/home/?categoryID=@category.ID">@category.Title</a></div>
+            }
+        }
+        else
+        {
+            <div><a href="/">Tất cả</a></div>
+            @foreach (var category in Model.Categories)
+            {
+                @if (category.ID == Model.ActiveCategory.ID)
+                {
+                    <div class="active"><a href="#">@category.Title</a></div>
+                }
+                else
+                {
+                    <div><a href="/home/?categoryID=@category.ID">@category.Title</a></div>
+                }
+            }
+        }
+    </div>
+    <div class="list-product-container">
+        @foreach (var product in Model.Products)
         {
             <div class="product-container" onclick="handleProductClick('@product.ID')">
                 <div class="product-img-container">
@@ -20,10 +45,31 @@
 </div>
 
 <style scoped>
-    .list-container {
+    .list-category-container {
+        display: flex;
+        justify-content: space-evenly;
+        border-bottom: 1px solid #ccc;
+        padding: 20px 0px;
+        margin: 0px 10%;
+    }
+
+        .list-category-container div {
+            margin-bottom: 5px;
+        }
+
+            .list-category-container div:hover {
+                cursor: pointer;
+                color: #66C2D5;
+            }
+
+    .active {
+        font-weight: bold;
+    }
+
+
+    .list-product-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
     }
 
     .product-container {
@@ -31,15 +77,16 @@
         flex-direction: column;
         justify-content: space-between;
         height: 400px;
-        width: 30%;
-        margin-top: 10px;
+        width: 33%;
+        margin-top: 30px;
         margin-bottom: 10px;
         border-radius: 10px;
     }
 
         .product-container:hover {
             cursor: pointer;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+            border: 1px solid #ccc;
         }
 
     .product-img-container {
@@ -54,7 +101,6 @@
     }
 
     .product-description-container {
-
     }
 
     .product-name {
